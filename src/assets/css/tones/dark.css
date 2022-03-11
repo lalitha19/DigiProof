@@ -13,14 +13,14 @@
 	/* Masks */
 	.bg-dark-soft:before{ position: absolute; content: ''; display: block; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(21,21,21,0.7); z-index: 1; }
 	.bg-mask{ position: relative; overflow: hidden; }
-	.bg-mask:before{ content:''; position: absolute; width: 100%; left: 0; top: -1px; bottom: -1px; display: block; background: url(../../images/mask1.svg) center bottom no-repeat; background-size: cover; z-index: 1; }
-	.bg-mask.mask2:before{ background-image: url(../../images/mask2.svg); }
+	.bg-mask:before{ content:''; position: absolute; width: 100%; left: 0; top: -1px; bottom: -1px; display: block; background: url(/assets/images/mask1.svg) center bottom no-repeat; background-size: cover; z-index: 1; }
+	.bg-mask.mask2:before{ background-image: url(/assets/images/mask2.svg); }
 
 	/* Waves */
 	body.dark-layout .section-waves:after,
-	.section-dark.section-waves:after{ background-image: url("../../images/section-waves-top-dark.svg"); }
+	.section-dark.section-waves:after{ background-image: url("/assets/images/section-waves-top-dark.svg"); }
 	body.dark-layout .section-waves:before,
-	.section-dark.section-waves:before{ background-image: url("../../images/section-waves-bottom-dark.svg"); }
+	.section-dark.section-waves:before{ background-image: url("/assets/images/section-waves-bottom-dark.svg"); }
 
 
 /* ==============================================

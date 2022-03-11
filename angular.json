@@ -26,10 +26,16 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/assets/css/style.css"
+            "styles": [              
+              "src/assets/css/plugins.css",
+              "src/assets/css/style.css",              
+              "src/assets/css/colors/red.css",
+              "src/assets/css/tones/dark.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/plugins.js"
+            ]
           },
           "configurations": {
             "production": {
