@@ -108,6 +108,7 @@
         //Stay Page when click on "stay" class
         $('.stay').on('click', function(e){ e.preventDefault(); });
 
+        setTimeout( function(){ 
         //Dropdown styles
         $('#navigation .has-sub').each(function() {
         	var showMobileNav = 992;
@@ -179,6 +180,7 @@
                 }
             });
         });
+    }, 500);
 
         // add #top href for scroll to top
         $( "a[href='#top']" ).on('click', function() {
