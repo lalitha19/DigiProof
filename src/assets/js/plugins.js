@@ -354,13 +354,29 @@ $('.chart').each(function () {
         });
     }, { offset: '101%' });
 });
-
+//Animated Items for desktops
+$.fn.animatedItems = function () {
+    var animatedItem = $(".animated");
+    if ($(window).width() > 992 && mobile === false) {
+        $(animatedItem).each(function () {
+            var item = $(this), animation = item.data('animation');
+            $(item).waypoint(function () {
+                if (!item.hasClass('visible')) {
+                    var animationDelay = item.data('animation-delay');
+                    if (animationDelay) { setTimeout(function () { item.addClass(animation + " visible"); }, animationDelay); }
+                    else { item.addClass(animation + " visible"); }
+                }
+            }, { offset: '95%' });
+        });
+    } else { $(animatedItem).addClass("visible") }
+}
+$("body").animatedItems();
 //*********************************************
 //  WINDOW LOAD FUNCTION START
 //*********************************************
 
 // Start Function
-$(window).on("load", function () {
+//$(window).on("load", function () {
 
     'use strict';
 
@@ -723,6 +739,7 @@ $(window).on("load", function () {
                     if ($($this).hasClass("contact-form")) {
                         $($this).parent().find(".error-messages").addClass("show error").removeClass("success");
                         $($this).addClass("error-message-showing");
+                        $("#showAlert").delay(5000).fadeOut('slow');
                         window.clearTimeout(timer);
                     }
                     $(error.element).addClass("error_warning");
@@ -1020,22 +1037,22 @@ $(window).on("load", function () {
     //  ANIMATED ITEMS
     //*********************************************
 
-    //Animated Items for desktops
-    $.fn.animatedItems = function () {
-        var animatedItem = $(".animated");
-        if ($(window).width() > 992 && mobile === false) {
-            $(animatedItem).each(function () {
-                var item = $(this), animation = item.data('animation');
-                $(item).waypoint(function () {
-                    if (!item.hasClass('visible')) {
-                        var animationDelay = item.data('animation-delay');
-                        if (animationDelay) { setTimeout(function () { item.addClass(animation + " visible"); }, animationDelay); }
-                        else { item.addClass(animation + " visible"); }
-                    }
-                }, { offset: '95%' });
-            });
-        } else { $(animatedItem).addClass("visible") }
-    }
+    // //Animated Items for desktops
+    // $.fn.animatedItems = function () {
+    //     var animatedItem = $(".animated");
+    //     if ($(window).width() > 992 && mobile === false) {
+    //         $(animatedItem).each(function () {
+    //             var item = $(this), animation = item.data('animation');
+    //             $(item).waypoint(function () {
+    //                 if (!item.hasClass('visible')) {
+    //                     var animationDelay = item.data('animation-delay');
+    //                     if (animationDelay) { setTimeout(function () { item.addClass(animation + " visible"); }, animationDelay); }
+    //                     else { item.addClass(animation + " visible"); }
+    //                 }
+    //             }, { offset: '95%' });
+    //         });
+    //     } else { $(animatedItem).addClass("visible") }
+    // }
     $("body").animatedItems();
 
     //*********************************************
@@ -1077,7 +1094,7 @@ $(window).on("load", function () {
     //         if ($elem.parents('.lightbox-gallery').length || $elem.parent('.has-sub').length) {} else{
     //             $(".pageloader").fadeIn(400);
     //             $(".pageloader").delay(450).hide(0);
-    //             setTimeout(function() {document.location.href = Exlink;}, 450);
+    //           //  setTimeout(function() {document.location.href = Exlink;}, 450);
     //             if (mobile === true || isSafari || isFirefox) {
     //                 setTimeout(function() {$(".pageloader").hide();}, 1200);
     //             }
@@ -1094,4 +1111,4 @@ $(window).on("load", function () {
         s.refresh();
     }
 
-}); //  END START FUNCTION
+//}); //  END START FUNCTION
